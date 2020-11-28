@@ -1,1 +1,0 @@
-/usr/bin/g++-9 -fPIC -g  -shared -Wl,-soname,libdisplay_library.so -o libdisplay_library.so CMakeFiles/display_library.dir/display.cpp.o 

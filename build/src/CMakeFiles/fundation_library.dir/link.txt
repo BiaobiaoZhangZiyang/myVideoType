@@ -1,1 +1,0 @@
-/usr/bin/g++-9 -fPIC -g  -shared -Wl,-soname,libfundation_library.so -o libfundation_library.so CMakeFiles/fundation_library.dir/fundation.cpp.o 
