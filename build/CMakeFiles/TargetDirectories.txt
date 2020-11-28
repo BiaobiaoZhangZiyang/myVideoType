@@ -1,0 +1,6 @@
+/home/zzy/Desktop/myVideoType/build/CMakeFiles/rebuild_cache.dir
+/home/zzy/Desktop/myVideoType/build/CMakeFiles/edit_cache.dir
+/home/zzy/Desktop/myVideoType/build/src/CMakeFiles/rebuild_cache.dir
+/home/zzy/Desktop/myVideoType/build/src/CMakeFiles/edit_cache.dir
+/home/zzy/Desktop/myVideoType/build/src/CMakeFiles/play.dir
+/home/zzy/Desktop/myVideoType/build/src/CMakeFiles/tool_library.dir
