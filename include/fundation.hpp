@@ -6,4 +6,7 @@ namespace fundation{
 #define Width 1280
 #define Height 720
 
+// white Color
+#define White cv::Scalar(0.0, 0.0, 0.0)
+
 }// namespace fundation
