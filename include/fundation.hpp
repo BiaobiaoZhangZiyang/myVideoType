@@ -7,6 +7,13 @@ namespace fundation{
 #define Height 720
 
 // white Color
-#define White cv::Scalar(0.0, 0.0, 0.0)
-
+#define White cv::Scalar(255.0, 255.0, 255.0)
+// black Color
+#define Black cv::Scalar(0.0, 0.0, 0.0)
+// scale for logo
+#define LogoScale 0.5
+// scale for text
+#define TextScale 0.3
+// personal Image Scale
+#define PersonImageScale 0.3
 }// namespace fundation
