@@ -11,7 +11,7 @@ cv::Mat scene1::sceneOne(std::string inputDir, std::string outputDir, char* wind
     text.fontScale = 2.0;
     text.textThickness = 3;
     text.fontType = cv::FONT_HERSHEY_COMPLEX;
-    text.value = "Computer Vision Project 0";
+    text.value = "CV Course 1st Project";
     text.textSize = cv::getTextSize(text.value, text.fontType, text.fontScale, text.textThickness, 0);
     text.textOrg = cv::Point((logo_orignal.cols - text.textSize.width)/2,(logo_orignal.rows + text.textSize.height)/2);
 
@@ -62,7 +62,7 @@ cv::Mat scene1::subScene(cv::Mat logo_orignal, cv::Mat personalImage, cv::Scalar
     }
     if(personFlag){
         cv::Mat personTextCanvas(logo_orignal.rows, logo_orignal.cols, CV_8UC3, Black);
-        cv::putText(personTextCanvas, "Ziyang Zhang from ZJU CAD&CG SKL" , text.textOrg, text.fontType, text.fontScale, color, text.textThickness); // 5. insert Text operation
+        cv::putText(personTextCanvas, "Ziyang Zhang from ZJU" , text.textOrg, text.fontType, text.fontScale, color, text.textThickness); // 5. insert Text operation
         tools::insertIntoRegion(canvas, personalImage, x*(-1), 0, PersonImageScale);
         tools::insertIntoRegion(canvas, personTextCanvas, x*(-1), y, TextScale);
     }

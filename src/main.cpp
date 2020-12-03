@@ -27,6 +27,6 @@ int main(int argc, char* argv[]){
     /* ---------------------------------- Scene 2 --------------------------------------------*/
 
     // produce a movie 
-    tools::produceVideo(outputDir, timeStep);
+    // tools::produceVideo(outputDir, timeStep);
     return 0;
 }
