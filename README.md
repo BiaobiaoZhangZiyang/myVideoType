@@ -3,7 +3,7 @@
 ## Scene 0: Openning
 ### SceneShot
 <center class="pics">
-    <img src = "https://github.com/BiaobiaoZhangZiyang/myVideoType/raw/master/pics/sceneopen.jpg">
+    <img src = "https://github.com/BiaobiaoZhangZiyang/myVideoType/blob/main/pics/sceneopen.jpg">
 </center>
 
 ## Scene 1: My Story

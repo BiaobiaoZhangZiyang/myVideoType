@@ -8,8 +8,10 @@ add_library(tool_library tools.cpp)
 
 add_library(sceneOne_library sceneOne.cpp)
 
+add_library(sceneTwo_library sceneTwo.cpp)
+
 add_executable( play main.cpp )
 
-target_link_libraries( play tool_library sceneOne_library ${OpenCV_LIBS} )
+target_link_libraries( play tool_library sceneOne_library sceneTwo_library ${OpenCV_LIBS} )
 
 

@@ -25,7 +25,7 @@ int main(int argc, char* argv[]){
     tools::sceneTransistion(Height, Width, windowName, sceneOneLastScrenShot, outputDir, timeStep);
     // SCENE TWO: Tell a story
     /* ---------------------------------- Scene 2 --------------------------------------------*/
-
+    
     // produce a movie 
     // tools::produceVideo(outputDir, timeStep);
     return 0;
