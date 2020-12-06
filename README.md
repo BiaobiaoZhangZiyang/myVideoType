@@ -6,7 +6,10 @@
 ```shell
 git clone https://github.com/BiaobiaoZhangZiyang/myVideoType.git
 ```
-2. make sure `pics` and `output` directories existed  
+2. make sure `pics` and `output` directories existed 
+```shell
+mkdir output
+``` 
 3. do the compile thing
 ```shell
 mkdir build && cd build
