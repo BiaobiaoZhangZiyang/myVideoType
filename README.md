@@ -1,6 +1,6 @@
 # 2020 Computer Vision 1st Project
 
-[watch this]("https://github.com/BiaobiaoZhangZiyang/myVideoType/blob/main/pics/myVideo.avi")
+![watch this]("https://github.com/BiaobiaoZhangZiyang/myVideoType/blob/main/pics/myVideo.avi")
 ## How to run this program
 1. first clone it
 ```shell
@@ -20,8 +20,9 @@ make
 5. all output will be send to the `output` dir
 6. **be free to pause at anytime by using space key!**
 <center class="pics">
-    <img src = "https://github.com/BiaobiaoZhangZiyang/myVideoType/blob/main/pics/pause.jpg">
-</center>
+    <img src = "https://github.com/BiaobiaoZhangZiyang/myVideoType/blob/main/pics/pause.png">
+</center>  
+
 ## Scene 0: Openning
 ### SceneShot
 <center class="pics">
@@ -33,6 +34,7 @@ make
 <center class="pics">
     <img src = "https://github.com/BiaobiaoZhangZiyang/myVideoType/blob/main/pics/scene2.jpg">
 </center>
+
 ## Scene 2: Ending
 
 ### SceneShot
