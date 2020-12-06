@@ -1,5 +1,6 @@
 #include "sceneOne.hpp"
 #include "sceneTwo.hpp"
+#include "sceneThree.hpp"
 
 int main(int argc, char* argv[]){
     int timeStep = 0;
@@ -18,7 +19,6 @@ int main(int argc, char* argv[]){
     try{
         // SCENE ONE: Me and ZJU
         /* ---------------------------------- Scene 1 --------------------------------------------*/
-        /*
         cv::Mat sceneOneLastScrenShot(Width, Height, CV_8UC3, Black); // scene 1 last sceneshot
         scene1::sceneOne(inputDir, outputDir, windowName, timeStep).copyTo(sceneOneLastScrenShot);
 
@@ -26,14 +26,15 @@ int main(int argc, char* argv[]){
         tools::showCurrentPics(windowName, sceneOneLastScrenShot, 2);
         tools::save(sceneOneLastScrenShot, outputDir, timeStep);
         tools::sceneTransistion(Height, Width, windowName, sceneOneLastScrenShot, outputDir, timeStep);
-        */
         // SCENE TWO: Tell a story
         /* ---------------------------------- Scene 2 --------------------------------------------*/
         cv::Mat sceneTwoLastScrenShot(Width, Height, CV_8UC3, Black); // scene 2 last sceneshot
         scene2::randomCircles(windowName, outputDir, timeStep).copyTo(sceneTwoLastScrenShot);
         // ===> ************** screen transation ***************** <====
-        //tools::sceneTransistion2(sceneTwoLastScrenShot, windowName, outputDir, timeStep);
         tools::sceneTransistion(Height, Width, windowName, sceneTwoLastScrenShot, outputDir, timeStep);
+        /* ---------------------------------- Last Scene --------------------------------------------*/
+       scene3::theEnd(outputDir, windowName, timeStep);
+
         // produce a movie 
         tools::produceVideo(outputDir, timeStep);
     }catch (const std::exception e){

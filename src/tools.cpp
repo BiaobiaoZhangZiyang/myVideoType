@@ -2,7 +2,7 @@
 
 cv::Mat freezeScreen(cv::Mat image){
     cv::Mat screenShot;
-    cv::GaussianBlur(image, screenShot, cv::Size(0, 0), 5, 5); // what does these params means???
+    cv::GaussianBlur(image, screenShot, cv::Size(0, 0), 5, 5); 
     cv::circle(screenShot, cv::Point(screenShot.cols/2, screenShot.rows/2), 50, White, 3);
     cv::rectangle(screenShot, cv::Point(screenShot.cols/2-20, screenShot.rows/2-30), cv::Point(screenShot.cols/2-10, screenShot.rows/2+30), White, -1, cv::LINE_8, 0);
     cv::rectangle(screenShot, cv::Point(screenShot.cols/2+20, screenShot.rows/2-30), cv::Point(screenShot.cols/2+10, screenShot.rows/2+30), White, -1, cv::LINE_8, 0);
