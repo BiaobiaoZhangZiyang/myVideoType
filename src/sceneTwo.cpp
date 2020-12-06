@@ -1,16 +1,43 @@
 #include "sceneTwo.hpp"
 
-void scene2::movingFlashLight(){
+cv::Mat scene2::randomCircles(char* windowName, std::string outputPath, int& timeStep){
+    static std::default_random_engine e;
+    e.seed(time(0));
+    static std::uniform_int_distribution<unsigned> fx(0, Width);
+    static std::uniform_int_distribution<unsigned> fy(0, Height);
+    static std::uniform_int_distribution<unsigned> r(10, 100);
     cv::Mat canvas(Height, Width, CV_8UC3, Black);
 
-    // 随着聚光灯移动，画一个矩形
-    int y = canvas.cols / 2 - 50;
-    for(int x_bias = 0; x_bias < 50; x_bias++){
-        cv::Mat mask(Height, Width, CV_8UC3, Black);
-        int x = canvas.rows/2 + x_bias;
-        circle(canvas, cv::Point(x, y), 25, cv::Scalar(0.0, 255.0, 255.0), 3);
-    }
-
-    // 然后在生成几个矩形
-    
+    // randomly draw random circle
+    for(int i = 0; i < 500; i++){
+        int x = fx(e);  // x coordinate
+        int y = fy(e); // y coordinate
+        int radius = r(e); // radius
+        switch(i%7){
+            case 0:
+                circle(canvas, cv::Point(x, y), radius, Red, -1);
+                break;
+            case 1:
+                circle(canvas, cv::Point(x, y), radius, Orange, -1);
+                break;
+            case 2:
+                circle(canvas, cv::Point(x, y), radius, Yellow, -1);
+                break;
+            case 3:
+                circle(canvas, cv::Point(x, y), radius, Green, -1);
+                break;
+            case 4:
+                circle(canvas, cv::Point(x, y), radius, Blue, -1);
+                break;
+            case 5:
+                circle(canvas, cv::Point(x, y), radius, Purple, -1);
+                break;
+            case 6:
+                circle(canvas, cv::Point(x, y), radius, White, -1);
+                break;
+        }
+        tools::save(canvas, outputPath, timeStep);
+        tools::showCurrentPics(windowName, canvas);
+    }    
+    return canvas;
 }

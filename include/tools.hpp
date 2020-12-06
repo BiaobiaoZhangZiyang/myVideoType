@@ -1,5 +1,7 @@
 #include "fundation.hpp"
 
+#ifndef TOOLS_HPP
+#define TOOLS_HPP
 namespace tools{
     // show the picture
     void showCurrentPics(char*, cv::Mat, int = 1);
@@ -9,8 +11,11 @@ namespace tools{
     cv::Mat colorized(int, int, double, double, double); 
     // scene Transitions
     void sceneTransistion(int, int, char*, cv::Mat, std::string, int&);
+    // scene Transitions 2
+    void sceneTransistion2(cv::Mat&, char*, std::string, int&);
     // save images
     void save(cv::Mat, std::string, int&);
     // produce video from exsited images fold
     void produceVideo(std::string, int);
 }// namespace display
+#endif

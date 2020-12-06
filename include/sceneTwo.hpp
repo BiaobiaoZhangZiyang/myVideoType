@@ -1,7 +1,7 @@
 #include "tools.hpp"
+#include <random>
+#include <ctime>
 
 namespace scene2{
-
-    void movingFlashLight();
-
+    cv::Mat randomCircles(char*, std::string, int&);
 }

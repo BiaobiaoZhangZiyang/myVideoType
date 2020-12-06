@@ -2,8 +2,10 @@
 
 cv::Mat freezeScreen(cv::Mat image){
     cv::Mat screenShot;
-    cv::GaussianBlur(image, screenShot, cv::Size(0, 0), 15, 15); // what does these params means???
-    // 加一个暂停的标志图片
+    cv::GaussianBlur(image, screenShot, cv::Size(0, 0), 5, 5); // what does these params means???
+    cv::circle(screenShot, cv::Point(screenShot.cols/2, screenShot.rows/2), 50, White, 3);
+    cv::rectangle(screenShot, cv::Point(screenShot.cols/2-20, screenShot.rows/2-30), cv::Point(screenShot.cols/2-10, screenShot.rows/2+30), White, -1, cv::LINE_8, 0);
+    cv::rectangle(screenShot, cv::Point(screenShot.cols/2+20, screenShot.rows/2-30), cv::Point(screenShot.cols/2+10, screenShot.rows/2+30), White, -1, cv::LINE_8, 0);
     return screenShot;
 }
 void tools::showCurrentPics(char* windowName, cv::Mat image, int seconds){
@@ -42,7 +44,7 @@ void tools::save(cv::Mat image, std::string path, int& timeStep){
 
 void tools::sceneTransistion(int rows, int cols, char* windowName, cv::Mat image, std::string path, int& timeStep){
     cv::Mat imageCopy(rows, cols, CV_8UC3);
-    for(int radius = rows/2; radius>0; radius--){
+    for(int radius = rows/2; radius>0; radius-=5){
         cv::Mat result;
         image.copyTo(imageCopy);
         cv::Mat mask(rows, cols, CV_8UC3, Black);
@@ -50,6 +52,25 @@ void tools::sceneTransistion(int rows, int cols, char* windowName, cv::Mat image
         cv::bitwise_and(imageCopy, mask, result);
         tools::showCurrentPics(windowName, result);
         tools::save(result, path, timeStep);
+    }
+}
+
+void tools::sceneTransistion2(cv::Mat& image, char* windowName, std::string outputPath , int& timeStep){
+    for(int i = 0; i<Height-10; i++)
+        for(int j = 0; j<Width-10; j++){
+            if(i % 10 == 0 && j % 10 == 0){
+                int blue = image.at<cv::Vec3b>(i, j)[0];
+                int green = image.at<cv::Vec3b>(i, j)[1];
+                int red = image.at<cv::Vec3b>(i, j)[2];
+                for(int ii = 0 ;ii<10;ii++)
+                    for(int jj = 0; jj<10; jj++){
+                        image.at<cv::Vec3b>(i+ii, j+jj)[0] = blue;
+                        image.at<cv::Vec3b>(i+ii, j+jj)[1] = green;
+                        image.at<cv::Vec3b>(i+ii, j+jj)[2] = red;
+                    }
+                }
+        tools::showCurrentPics(windowName, image);
+        tools::save(image, outputPath, timeStep);
     }
 }
 
