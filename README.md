@@ -1,5 +1,6 @@
 # 2020 Computer Vision 1st Project
 
+[watch this]("https://github.com/BiaobiaoZhangZiyang/myVideoType/blob/main/pics/myVideo.avi")
 ## How to run this program
 1. first clone it
 ```shell
